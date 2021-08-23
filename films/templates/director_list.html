@@ -1,0 +1,9 @@
+{% block content %}
+    <h2>Directors</h2>
+    <ul>
+        {% for director in object_list %}
+            <li>{{ director.first_name}} {{ director.last_name}}<br><hr>
+            	<li>{% for film in director.film_set.all %}{{film.title}}{%endfor%}<br><hr></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
