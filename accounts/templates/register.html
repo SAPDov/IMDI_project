@@ -1,0 +1,17 @@
+{% include "partials/base.html" %}
+{% block content %}
+	<div align="center">
+		  <form method="post">
+			    {% csrf_token %}
+			    {{ form.as_p }}
+			    {{ profile_form.as_p }}
+			    <button class ="btn btn-primary" type="submit">Sign up</button>
+		  </form>
+		  <div class="border-top pt-3">
+		  	<small class="text_muted">
+		  		Already Have an account? <a href="{% url 'login' %}">Log In</a>
+		  	</small>
+		 </div>
+	</div>
+
+{% endblock %}

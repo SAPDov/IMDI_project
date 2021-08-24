@@ -1,0 +1,18 @@
+{% include "partials/base.html" %}
+{% include "partials/navbar.html" %} 
+{% block content %}
+	<div class="container-fluid d-flex  justify-content-center">
+		  <form method="post">
+			    {% csrf_token %}
+			    {{ form.as_p }}
+			    <button class ="btn btn-primary" type="submit">Log In</button>
+		  </form>
+		  <div class="border-top pt-3">
+		  	<small class="text_muted">
+		  		Need an account? <a href="{% url 'register' %}">Sign Up Now</a>
+		  	</small>
+		 </div>
+	</div>
+
+{% endblock %}
+

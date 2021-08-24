@@ -8,8 +8,9 @@ from django.views.generic import View, ListView, CreateView, DeleteView, DetailV
 
 
 def home(request):
-	films = Film.objects.all()
-	return render(request, 'homepage.html', {'films':films})
+	film = Film.objects.first()
+	director = Director.objects.first()
+	return render(request, 'homepage.html', {'film':film, 'director':director})
 
 
 class FilmListView(ListView):
