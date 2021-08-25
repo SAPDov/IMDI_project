@@ -1,14 +1,14 @@
+
 {% block content %}
     <h2>Films</h2>
-    <ul>
+    <ul class="list-group">
         {% for film in object_list %}
-            <li>Title: {{film.title}}</li><br>
-            <li>Release Date: {{film.release_date}}</li><br>
-            <li>Country created: {{film.created_in_country}}</li><br>
-            <li>Availble country: {{film.available_countries}}</li><br>
-            <li>Category: {%for category in film.category.all%}{{category.name}}{%endfor%}</li><br>
-            <li>Director: {%for director in film.director.all%}{{director.first_name}} {{director.last_name}}{%endfor%}</li><br><hr>
-
+            <li class="list-group-item">Title: {{film.title}}</li><br>
+            <li class="list-group-item">Release Date: {{film.release_date}}</li><br>
+            <li class="list-group-item">Country created: {{film.created_in_country}}</li><br>
+            <li class="list-group-item">Availble country: {{film.available_countries}}</li><br>
+            <li class="list-group-item">Category: {%for category in film.category.all%}{{category.name}}{%endfor%}</li><br>
+            <li class="list-group-item">Director: {%for director in film.director.all%}{{director.first_name}} {{director.last_name}}{%endfor%}</li><br><hr>
         {% endfor %}
     </ul>
 {% endblock %}
